@@ -7,10 +7,10 @@ import java.util.Scanner;
 public class ParcingCon {
 
 
-    public ArrayList<com.javacon.Event> getEvents(){
+    public ArrayList<Event> getEvents(){
         try {
             Scanner scan = new Scanner(Path.of("JavaCon/src/main/resources/input.txt"));
-            ArrayList<com.javacon.Event> events = new ArrayList<>();
+            ArrayList<Event> events = new ArrayList<>();
             while  (scan.hasNext()) {
                 String row;
                 row = scan.nextLine();
@@ -18,15 +18,21 @@ public class ParcingCon {
                 if (row.contains("lightning")) {
 
                     for (String splits : row.split("lightning", 2)) {
-                        if (!hasSplit) {
-                            com.javacon.Event event = new com.javacon.Event(splits, 5);
-                            events.add(event);
-                            events.toString();
-
-                            hasSplit = true;
-                        }
+                        System.out.println(splits);
+//
+//                        if (!hasSplit) {
+//                            com.javacon.Event event = new com.javacon.Event(splits, 5);
+//                            events.add(event);
+//
+//
+//                            hasSplit = true;
+//                        }
 
                     }
+
+                }else{
+
+
 
                 }
 

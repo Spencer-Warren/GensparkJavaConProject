@@ -1,11 +1,13 @@
 package src.test.java.com.javacon;
-import com.javacon.Event;
 
-import static org.junit.jupiter.api.Assertions.*;
+import src.main.java.com.javacon.Event;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.Assert.assertEquals;
 
 class EventTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getNameTest() {
         Event event = new Event("Event 1", 60);
         assertEquals("Event 1", event.getName());

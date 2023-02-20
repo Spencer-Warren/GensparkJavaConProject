@@ -1,4 +1,4 @@
-package com.javacon;
+package src.main.java.com.javacon;
 
 /**
  * Represents an event

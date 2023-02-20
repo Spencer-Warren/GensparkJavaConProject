@@ -1,4 +1,5 @@
-package com.javacon;
+package src.test.java.com.javacon;
+import com.javacon.Event;
 
 import static org.junit.jupiter.api.Assertions.*;
 

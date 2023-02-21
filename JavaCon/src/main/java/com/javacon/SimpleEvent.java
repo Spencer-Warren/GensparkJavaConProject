@@ -3,7 +3,7 @@ package com.javacon;
 /**
  * Represents an event
  */
-public class Event {
+public class SimpleEvent {
     public final String name; // name of the event
     public final int duration; // in minutes
 
@@ -13,7 +13,7 @@ public class Event {
      * @param name     name of the event
      * @param duration duration of the event in minutes
      */
-    public Event(String name, int duration) {
+    public SimpleEvent(String name, int duration) {
         this.name = name;
         this.duration = duration;
     }

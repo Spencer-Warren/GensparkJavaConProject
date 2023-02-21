@@ -7,10 +7,10 @@ import java.util.Scanner;
 public class ParcingCon {
 
 
-    public ArrayList<Event> getEvents(){
+    public ArrayList<SimpleEvent> getEvents(){
         try {
             Scanner scan = new Scanner(Path.of("JavaCon/src/main/resources/input.txt"));
-            ArrayList<Event> events = new ArrayList<>();
+            ArrayList<SimpleEvent> simpleEvents = new ArrayList<>();
             while  (scan.hasNext()) {
                 String row;
                 row = scan.nextLine();
@@ -24,8 +24,8 @@ public class ParcingCon {
                         if (!hasSplit) {
                             //Adds the Name of the Event if it is a Lightning Topic
                             //then skips the remaining half as it isn't needed.
-                            Event event = new Event(splits, 5);
-                            events.add(event);
+                            SimpleEvent simpleEvent = new SimpleEvent(splits, 5);
+                            simpleEvents.add(simpleEvent);
                             hasSplit = true;
                         }
 
@@ -40,8 +40,8 @@ public class ParcingCon {
                     if (!hasSplit) {
                         //Adds the Name of the Event if it is a 30min Topic
                         //then skips the remaining half as it isn't needed.
-                        Event event = new Event(splits, 30);
-                        events.add(event);
+                        SimpleEvent simpleEvent = new SimpleEvent(splits, 30);
+                        simpleEvents.add(simpleEvent);
                         hasSplit = true;
                     }
                 }
@@ -53,8 +53,8 @@ public class ParcingCon {
                             if (!hasSplit) {
                                 //Adds the Name of the Event if it is a 45min Topic
                                 //then skips the remaining half as it isn't needed.
-                                Event event = new Event(splits, 45);
-                                events.add(event);
+                                SimpleEvent simpleEvent = new SimpleEvent(splits, 45);
+                                simpleEvents.add(simpleEvent);
                                 hasSplit = true;
                             }
 
@@ -68,8 +68,8 @@ public class ParcingCon {
                             if (!hasSplit) {
                                 //Adds the Name of the Event if it is a 60min Topic
                                 //then skips the remaining half as it isn't needed.
-                                Event event = new Event(splits, 60);
-                                events.add(event);
+                                SimpleEvent simpleEvent = new SimpleEvent(splits, 60);
+                                simpleEvents.add(simpleEvent);
                                 hasSplit = true;
                             }
                     }
@@ -81,8 +81,8 @@ public class ParcingCon {
                             if (!hasSplit) {
                                 //Adds the Name of the Event if it is a 15min Topic
                                 //then skips the remaining half as it isn't needed.
-                                Event event = new Event(splits, 15);
-                                events.add(event);
+                                SimpleEvent simpleEvent = new SimpleEvent(splits, 15);
+                                simpleEvents.add(simpleEvent);
                                 hasSplit = true;
                             }
 
@@ -96,7 +96,7 @@ public class ParcingCon {
 
 
 
-            return events;
+            return simpleEvents;
         }catch (Exception e){System.out.println(e);}
 
 

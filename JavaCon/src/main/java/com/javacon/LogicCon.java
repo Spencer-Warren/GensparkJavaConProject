@@ -17,8 +17,8 @@ public class LogicCon {
     public static List<TimedEvent> scheduleEvents(List<SimpleEvent> events) {
         List<TimedEvent> scheduledEvents = new ArrayList<>();
 
-        TimedEvent lunch = new TimedEvent("Lunch", 60, 1200 * 60);
-        TimedEvent networking = new TimedEvent("Networking", 60, 1700 * 60);
+        TimedEvent lunch = new TimedEvent("Lunch", 60, 12 * 60);
+        TimedEvent networking = new TimedEvent("Networking", 60, 17 * 60);
 
         for (SimpleEvent event : events) {
             // schedule the event

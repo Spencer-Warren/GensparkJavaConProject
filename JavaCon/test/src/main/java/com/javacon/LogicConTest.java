@@ -58,7 +58,7 @@ class LogicConTest {
         assertTrue(LogicCon.getTotalDuration(track1Afternoon) <= 240);
         assertTrue(LogicCon.getTotalDuration(track2Morning) <= 180);
         assertTrue(LogicCon.getTotalDuration(track2Afternoon) <= 240);
-        assertEquals(outContent.toString(), "");
+        assertFalse(outContent.toString().contains("Can't add"));
     }
 
 }

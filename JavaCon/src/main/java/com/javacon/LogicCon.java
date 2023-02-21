@@ -1,7 +1,6 @@
 package com.javacon;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class LogicCon {
@@ -17,6 +16,7 @@ public class LogicCon {
      */
     public static List<List<TimedEvent>> scheduleEvents(List<SimpleEvent> events) {
         events.sort((e1, e2) -> e2.duration - e1.duration);
+
         List<TimedEvent> track1Morning = new ArrayList<>();
         List<TimedEvent> track1Afternoon = new ArrayList<>();
         List<TimedEvent> track2Morning = new ArrayList<>();
@@ -28,7 +28,7 @@ public class LogicCon {
                 track1Afternoon.add(new TimedEvent(event, 13 * 60 + getTotalDuration(track1Afternoon)));
             }
 
-            if (canAddAfternoon(track2Afternoon, event)) {
+            else if (canAddAfternoon(track2Afternoon, event)) {
                 track2Afternoon.add(new TimedEvent(event, 13 * 60 + getTotalDuration(track2Afternoon)));
             }
 
@@ -43,7 +43,14 @@ public class LogicCon {
                 System.out.println("Can't add " + event);
             }
         }
-
+        System.out.println("Track 1 Morning");
+        track1Morning.forEach(System.out::println);
+        System.out.println("Track 1 Afternoon");
+        track1Afternoon.forEach(System.out::println);
+        System.out.println("Track 2 Morning");
+        track2Morning.forEach(System.out::println);
+        System.out.println("Track 2 Afternoon");
+        track2Afternoon.forEach(System.out::println);
 
 
         return List.of(track1Morning, track1Afternoon, track2Morning, track2Afternoon);

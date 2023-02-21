@@ -1,4 +1,4 @@
-package src.main.java.com.javacon;
+package com.javacon;
 
 import java.nio.file.Path;
 import java.util.ArrayList;

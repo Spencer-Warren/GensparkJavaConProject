@@ -1,9 +1,8 @@
-package src.test.java.com.javacon;
+package com.javacon;
 
-import src.main.java.com.javacon.Event;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EventTest {
 

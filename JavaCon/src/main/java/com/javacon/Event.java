@@ -1,4 +1,4 @@
-package src.main.java.com.javacon;
+package com.javacon;
 
 /**
  * Represents an event
@@ -9,7 +9,8 @@ public class Event {
 
     /**
      * Constructor
-     * @param name name of the event
+     *
+     * @param name     name of the event
      * @param duration duration of the event in minutes
      */
     public Event(String name, int duration) {
@@ -19,6 +20,7 @@ public class Event {
 
     /**
      * Returns the name of the event
+     *
      * @return the name of the event
      */
     public String getName() {
@@ -27,6 +29,7 @@ public class Event {
 
     /**
      * Returns the duration of the event
+     *
      * @return the duration of the event
      */
     public int getDuration() {
@@ -36,6 +39,7 @@ public class Event {
     /**
      * Returns a string representation of the event
      * if the duration is 5 minutes, it is a lightning talk
+     *
      * @return a string representation of the event
      */
     public String toString() {

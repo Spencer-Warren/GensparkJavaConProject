@@ -6,6 +6,11 @@ public class TimedEvent extends SimpleEvent {
 
     private final int startTime;
 
+    public TimedEvent(SimpleEvent event, int startTime) {
+        super(event.getName(), event.getDuration());
+        this.startTime = startTime;
+    }
+
     public TimedEvent(String name, int duration, int startTime) {
         super(name, duration);
         this.startTime = startTime;
@@ -14,4 +19,5 @@ public class TimedEvent extends SimpleEvent {
     public int getStartTime() {
         return startTime;
     }
+
 }

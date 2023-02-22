@@ -20,4 +20,39 @@ public class TimedEvent extends SimpleEvent {
         return startTime;
     }
 
+    public String toString(){
+        String ans = "";
+        if(startTime / 60 > 12){
+            ans = "0" + ((startTime / 60) - 12) + ":";
+            if(startTime % 60 < 10){
+                ans = ans + "0" + (startTime % 60);
+            } else{
+                ans = ans + (startTime % 60);
+            }
+            ans = ans + "PM\t" + name + "\t";
+        } else if(startTime / 60 < 10){
+            ans = "0" + (startTime / 60) + ":";
+            if(startTime % 60 < 10){
+                ans = ans + "0" + (startTime % 60);
+            } else{
+                ans = ans + (startTime % 60);
+            }
+            ans = ans + "AM\t" + name + "\t";
+        } else{
+            ans = (startTime / 60) + ":";
+            if(startTime % 60 < 10){
+                ans = ans + "0" + (startTime % 60);
+            } else{
+                ans = ans + (startTime % 60);
+            }
+            ans = ans + "AM\t" + name + "\t";
+        }
+        if(duration == 5){
+            ans = ans + "lightning";
+        } else{
+            ans = ans + duration + "min";
+        }
+        return ans;
+    }
+
 }

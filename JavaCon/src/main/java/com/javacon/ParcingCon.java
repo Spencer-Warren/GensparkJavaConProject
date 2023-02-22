@@ -7,9 +7,14 @@ import java.util.Scanner;
 public class ParcingCon {
 
 
-    public static ArrayList<SimpleEvent> getEvents() {
+    public static ArrayList<SimpleEvent> getEvents(){
+        return getEvents("JavaCon/src/main/resources/input.txt");
+    }
+
+    //for testing purposes
+    public static ArrayList<SimpleEvent> getEvents(String path) {
         try {
-            Scanner scan = new Scanner(Path.of("JavaCon/src/main/resources/input.txt"));
+            Scanner scan = new Scanner(Path.of(path));
             ArrayList<SimpleEvent> simpleEvents = new ArrayList<>();
             while (scan.hasNext()) {
                 String row;
@@ -18,6 +23,7 @@ public class ParcingCon {
 
                 if (row.contains("lightning")) {
                     for (String splits : row.split("lightning")) {
+                        splits = splits.trim();
 //                        System.out.println("Lightning Split Test:");
 //                        System.out.println(splits);
                         if (!hasSplit) {
@@ -33,6 +39,7 @@ public class ParcingCon {
                 else {
                     if (row.contains("30min")) {
                         for (String splits : row.split("30")) {
+                            splits = splits.trim();
 //                    System.out.println("30min Split Test:");
 //                    System.out.println(splits);
                             if (!hasSplit) {
@@ -49,6 +56,7 @@ public class ParcingCon {
                         for (String splits : row.split("45min")) {
 //                            System.out.println("45min Split Test:");
 //                            System.out.println(splits);
+                            splits = splits.trim();
                             if (!hasSplit) {
                                 //Adds the Name of the Event if it is a 45min Topic
                                 //then skips the remaining half as it isn't needed.
@@ -61,6 +69,7 @@ public class ParcingCon {
 
                     else if (row.contains("60min")) {
                         for (String splits : row.split("60min")) {
+                            splits = splits.trim();
 //                            System.out.println("60min Split Test:");
 //                            System.out.println(splits);
                             if (!hasSplit) {
@@ -75,6 +84,7 @@ public class ParcingCon {
 
                     else if (row.contains("15min")) {
                         for (String splits : row.split("15")) {
+                            splits = splits.trim();
 //                            System.out.println("15min Split Test:");
 //                            System.out.println(splits);
                             if (!hasSplit) {

@@ -48,4 +48,9 @@ public class SimpleEvent {
         }
         return String.format("%s %dmin", name, duration);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return this.toString().equals(obj.toString());
+    }
 }

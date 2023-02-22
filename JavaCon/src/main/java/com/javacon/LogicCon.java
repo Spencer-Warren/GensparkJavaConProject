@@ -26,31 +26,16 @@ public class LogicCon {
 
             if (canAddAfternoon(track1Afternoon, event)) {
                 track1Afternoon.add(new TimedEvent(event, 13 * 60 + getTotalDuration(track1Afternoon)));
-            }
-
-            else if (canAddAfternoon(track2Afternoon, event)) {
+            } else if (canAddAfternoon(track2Afternoon, event)) {
                 track2Afternoon.add(new TimedEvent(event, 13 * 60 + getTotalDuration(track2Afternoon)));
-            }
-
-            else if (canAdd(track1Morning, event)) {
+            } else if (canAdd(track1Morning, event)) {
                 track1Morning.add(new TimedEvent(event, 9 * 60 + getTotalDuration(track1Morning)));
-            }
-
-            else if (canAdd(track2Morning, event)) {
+            } else if (canAdd(track2Morning, event)) {
                 track2Morning.add(new TimedEvent(event, 9 * 60 + getTotalDuration(track2Morning)));
-            }
-            else {
+            } else {
                 System.out.println("Can't add " + event);
             }
         }
-        System.out.println("Track 1 Morning");
-        track1Morning.forEach(System.out::println);
-        System.out.println("Track 1 Afternoon");
-        track1Afternoon.forEach(System.out::println);
-        System.out.println("Track 2 Morning");
-        track2Morning.forEach(System.out::println);
-        System.out.println("Track 2 Afternoon");
-        track2Afternoon.forEach(System.out::println);
 
 
         return List.of(track1Morning, track1Afternoon, track2Morning, track2Afternoon);

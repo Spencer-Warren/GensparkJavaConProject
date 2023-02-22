@@ -17,7 +17,7 @@ public class ParcingConTest {
      */
     @Test
     public void testGetEvents() throws Exception {
-        ParcingCon parse = new ParcingCon();
-        parse.getEvents();
+
+        ParcingCon.getEvents();
     }
 }

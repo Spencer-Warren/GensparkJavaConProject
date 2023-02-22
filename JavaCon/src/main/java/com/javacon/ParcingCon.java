@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ParcingCon {
 
 
-    public ArrayList<SimpleEvent> getEvents(){
+    public static ArrayList<SimpleEvent> getEvents(){
         try {
             Scanner scan = new Scanner(Path.of("JavaCon/src/main/resources/input.txt"));
             ArrayList<SimpleEvent> simpleEvents = new ArrayList<>();

@@ -20,6 +20,7 @@ public class TimedEvent extends SimpleEvent {
         return startTime;
     }
 
+    @Override
     public String toString(){
         String ans = "";
         if(startTime / 60 > 12){

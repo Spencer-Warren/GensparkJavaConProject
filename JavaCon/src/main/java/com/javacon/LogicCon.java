@@ -21,9 +21,8 @@ public class LogicCon {
         List<TimedEvent> track1Afternoon = new ArrayList<>();
         List<TimedEvent> track2Morning = new ArrayList<>();
         List<TimedEvent> track2Afternoon = new ArrayList<>();
-        
-        for (SimpleEvent event : events) {
 
+        for (SimpleEvent event : events) {
             if (canAddAfternoon(track1Afternoon, event)) {
                 track1Afternoon.add(new TimedEvent(event, 13 * 60 + getTotalDuration(track1Afternoon)));
             } else if (canAddAfternoon(track2Afternoon, event)) {
@@ -36,17 +35,32 @@ public class LogicCon {
                 System.out.println("Can't add " + event);
             }
         }
-
-
         return List.of(track1Morning, track1Afternoon, track2Morning, track2Afternoon);
     }
 
-    private static boolean canAdd(List<TimedEvent> block, SimpleEvent event){
+    /**
+     * Checks if the event can be added to the block
+     *
+     * @param block the block of events
+     * @param event the event to add
+     * @return true if the event can be added to the block
+     */
+    private static boolean canAdd(List<TimedEvent> block, SimpleEvent event) {
         return getTotalDuration(block) + event.getDuration() <= 180;
     }
-    private static boolean canAddAfternoon(List<TimedEvent> block, SimpleEvent event){
+
+    /**
+     * Checks if the event can be added to the block
+     * in the afternoon session since it has a different duration
+     *
+     * @param block the block of events
+     * @param event the event to add
+     * @return true if the event can be added to the block
+     */
+    private static boolean canAddAfternoon(List<TimedEvent> block, SimpleEvent event) {
         return getTotalDuration(block) + event.getDuration() < 240;
     }
+
 
     /**
      * Gets the total duration of the events
@@ -54,7 +68,7 @@ public class LogicCon {
      * @param events the list of events
      * @return the total duration of the events
      */
-    public static int getTotalDuration(List<TimedEvent> events){
+    public static int getTotalDuration(List<TimedEvent> events) {
         int totalDuration = 0;
         for (SimpleEvent event : events) {
             totalDuration += event.getDuration();

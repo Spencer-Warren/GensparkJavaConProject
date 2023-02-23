@@ -8,7 +8,7 @@ public class ParcingCon {
 
 
     public static ArrayList<SimpleEvent> getEvents(){
-        return getEvents("JavaCon/src/main/resources/input.txt");
+        return getEvents("resources/input.txt");
     }
 
     //for testing purposes

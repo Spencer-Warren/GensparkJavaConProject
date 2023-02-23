@@ -61,4 +61,14 @@ class LogicConTest {
         assertFalse(outContent.toString().contains("Can't add"));
     }
 
+    @Test
+    void cantAddTest() {
+        List<SimpleEvent> events = new ArrayList<>();
+        for (int i = 0; i < 15; i++) {
+            events.add(new SimpleEvent("Event 1", 60));
+        }
+        LogicCon.scheduleEvents(events);
+        assertTrue(outContent.toString().contains("Can't add"));
+    }
+
 }

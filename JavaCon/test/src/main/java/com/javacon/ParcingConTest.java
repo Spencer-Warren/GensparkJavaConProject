@@ -24,7 +24,7 @@ public class ParcingConTest {
     public void testGetEvents() {
 
         List<SimpleEvent> eventList = new ArrayList<>();
-        eventList = ParcingCon.getEvents("../JavaCon/src/main/resources/input.txt");
+        eventList = ParcingCon.getEvents("resources/input.txt");
         List<SimpleEvent> events = new ArrayList<>();
         events.add(new SimpleEvent("Java and Containers -  Make it Awesome!", 45));
         events.add(new SimpleEvent("Java: Did you Know That?", 30));

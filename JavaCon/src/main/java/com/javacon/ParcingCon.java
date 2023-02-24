@@ -11,7 +11,7 @@ public class ParcingCon {
     }
 
     public static List<SimpleEvent> getEvents(){
-        return getEvents("resources/input.txt");
+        return getEvents("JavaCon/src/main/resources/input.txt");
     }
 
     //for testing purposes
